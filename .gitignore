@@ -1,0 +1,8 @@
+# Default
+*~
+.DS_Store
+
+# C
+a.out
+*.e
+*.o
