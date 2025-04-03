@@ -1,3 +1,4 @@
+// Includes the standard libraries.
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -9,15 +10,15 @@
  * @param len The length of the code.
  * @return The generated code.
  */
-char *generateCode(unsigned int len) {
+char *generateCode(unsigned int length) {
   // Checks and sets a valid minimum length.
-  if (len < 1) len = 1;
+  if (length < 1) length = 1;
   // Sets the seed for the `rand` function.
   srand(time(NULL));
   // Reserves memory for the code variable.
-  char *code = malloc(len + 1);
+  char *code = malloc(length + 1);
   // Fills the code with random digits from 0 to 9.
-  for (int i = 0; i < len; i++) code[i] = rand() % 10 + '0';
+  for (int i = 0; i < length; i++) code[i] = rand() % 10 + '0';
 
   return code;
 }
@@ -34,19 +35,23 @@ char *generateCode(unsigned int len) {
  * @param input The input.
  * @return The result of the comparison.
  */
-char *compareResult(int len, char *code, char *input) {
+char *compareResult(int length, char *code, char *input) {
   // Reserves memory for the result variable.
-  char *result = malloc(len + 1);
+  char *result = malloc(length + 1);
 
-  // Fills the result with `*`, `? ` or the correct digit.
-  for (int i = 0; i < len; i++) {
-    result[i] = '*';
+  // Fills the result with `*`.
+  for (int i = 0; i < length; i++) result[i] = '*';
 
+  // Sets the minimum length if the input is shorter.
+  if (strlen(input) < length) length = strlen(input);
+
+  // Fills the result with `?` or the correct digit.
+  for (int i = 0; i < length; i++) {
     // Checks if a digit is correct.
     if (input[i] == code[i]) result[i] = code[i];
     else {
       // Checks if a digit is in the wrong position.
-      for (int j = 0; j < len; j++) {
+      for (int j = 0; j < length; j++) {
         if (input[i] == code[j]) {
           result[i] = '?';
           break;
@@ -73,11 +78,14 @@ int main(int argc, char *argv[]) {
   // The main loop.
   while (1) {
     // Asks for the input.
-    printf(" %02d > ", attempts);
+    printf(" %d > ", attempts);
     fgets(input, 256, stdin);
+    // Removes the newline character.
+    input[strlen(input) - 1] = 0;
     // Limits the input to the code length.
     input[codeLength] = 0;
-    printf("      %s\n", compareResult(codeLength, code, input));
+    // Prints the result.
+    printf("     %s\n", compareResult(codeLength, code, input));
     // Reduces the number of attempts by one.
     attempts--;
 
