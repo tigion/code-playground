@@ -10,6 +10,7 @@ This is a collection of little code projects and tutorials.
 
 ### 📙 [Python](./python/)
 
+- [Hangman](./python/hangman/) (wip) - A simple game to guess a word.
 - [Safe](./python/safe/) - A simple game to guess a code.
 
 ### 📙 [Scratch](./scratch/)
