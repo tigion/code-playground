@@ -6,3 +6,6 @@
 a.out
 *.e
 *.o
+
+# Python
+__pycache__/
