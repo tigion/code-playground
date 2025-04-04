@@ -28,6 +28,10 @@ def generate_code(length: int) -> str:
 def compare_result(length: int, code: str, input_: str) -> str:
     """Compares the input with the code.
 
+    - `*` if the digit is wrong and not in the code.
+    - `?` if the digit is in the wrong position.
+    - `0` to `9` if the correct digit is in the right position.
+
     Args:
         length: The length of the code.
         code: The code.
