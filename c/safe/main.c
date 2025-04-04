@@ -76,7 +76,7 @@ int main(int argc, char *argv[]) {
   printf("The code is %d digits long.\n\n", codeLength);
 
   // The main loop.
-  while (1) {
+  while (attempts > 0) {
     // Asks for the input.
     printf(" %d > ", attempts);
     fgets(input, 256, stdin);
@@ -97,7 +97,6 @@ int main(int argc, char *argv[]) {
     } else if (attempts == 0) {
       // The number of attempts is zero.
       printf("\nYou failed, the code was '%s'.\n", code);
-      break;
     };
   }
 

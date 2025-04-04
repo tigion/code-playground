@@ -99,7 +99,6 @@ def main():
         elif attempts == 0:
             # The number of attempts is zero.
             print(f"\nYou failed, the code was '{code}'.")
-            break
 
     return 0
 
