@@ -12,8 +12,10 @@ def main():
 
     min_number = 1  # The minimum number.
     max_number = 100  # The maximum number.
-    secret_number = randint(min_number, max_number)  # The secret number.
     attempts = 0  # The number of attempts.
+
+    # Generates a random number between the minimum and maximum.
+    secret_number = randint(min_number, max_number)
 
     print(f"Guess my number between {min_number} and {max_number}!\n")
 
