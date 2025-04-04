@@ -6,6 +6,7 @@ This is a collection of little code projects and tutorials.
 
 ### 📙 [C](./c/)
 
+- [Number](./c/number/) - A simple game to guess a number.
 - [Safe](./c/safe/) - A simple game to guess a code.
 
 ### 📙 [Java](./java/)
