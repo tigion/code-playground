@@ -8,6 +8,10 @@ This is a collection of little code projects and tutorials.
 
 - [Safe](./c/safe/) - A simple game to guess a code.
 
+### 📙 [Java](./java/)
+
+- [Safe](./java/safe/) - A simple game to guess a code.
+
 ### 📙 [Python](./python/)
 
 - [Hangman](./python/hangman/) (wip) - A simple game to guess a word.
