@@ -4,6 +4,10 @@ This is a collection of little code projects and tutorials.
 
 ## Playgrounds
 
+### 📙 [Bash](./bash/)
+
+- [Number](./bash/number/) - A simple game to guess a number.
+
 ### 📙 [C](./c/)
 
 - [Number](./c/number/) - A simple game to guess a number.
