@@ -14,6 +14,10 @@ This is a collection of little code projects and tutorials.
 - [Number](./java/number/) - A simple game to guess a number.
 - [Safe](./java/safe/) - A simple game to guess a code.
 
+### 📙 [Lua](./lua/)
+
+- [Number](./lua/number/) - A simple game to guess a number.
+
 ### 📙 [Python](./python/)
 
 - [Hangman](./python/hangman/) (wip) - A simple game to guess a word.
