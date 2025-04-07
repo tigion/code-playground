@@ -1,4 +1,4 @@
-# Safe
+# Number
 
 A simple game in Lua. The goal is to guess a number.
 
