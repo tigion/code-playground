@@ -17,6 +17,7 @@ This is a collection of little code projects and tutorials.
 ### 📙 [Lua](./lua/)
 
 - [Number](./lua/number/) - A simple game to guess a number.
+- [Safe](./lua/safe/) - A simple game to guess a code.
 
 ### 📙 [Python](./python/)
 
