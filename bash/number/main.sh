@@ -35,17 +35,17 @@ while true; do
     # Is not an integer.
     echo "Invalid input!"
     continue
-  elif [[ "$guess" -eq "$secret_number" ]]; then
+  elif [[ $guess -eq $secret_number ]]; then
     # The guess is correct.
     echo
     echo "You win, the number was ${secret_number}!"
     echo "You had ${attempts} attempts."
     # Exits the loop.
     break
-  elif [[ "$guess" -lt "$secret_number" ]]; then
+  elif [[ $guess -lt $secret_number ]]; then
     # The guess is too low.
     echo "Too low!"
-  elif [[ "$guess" -gt "$secret_number" ]]; then
+  elif [[ $guess -gt $secret_number ]]; then
     # The guess is too high.
     echo "Too high!"
   fi
