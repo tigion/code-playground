@@ -29,6 +29,10 @@ This is a collection of little code projects and tutorials.
 - [Number](./python/number/) - A simple game to guess a number.
 - [Safe](./python/safe/) - A simple game to guess a code.
 
+### [Rust](./rust/)
+
+- [Number](./rust/number/) - A simple game to guess a number.
+
 ### 📙 [Scratch](./scratch/)
 
 - [Catch Grades](./scratch/catch-grades/) (de) - A simple game with a
