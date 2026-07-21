@@ -1,12 +1,14 @@
-# Safe
+# Number
 
 A simple game in Rust. The goal is to guess a number.
 
 ## How to build and run
 
 1. Download the _number_ folder to your computer.
-2. Build it with `cargo build --release`.
-3. Run it with `cargo run --release`.
+2. Open a terminal and navigate to the _number_ folder.
+3. Build it with `cargo build` or `cargo build --release`.
+4. Run it with `cargo run` (`cargo run --release`) or `./target/debug/number`
+   (`./target/release/number`).
 
 ## How to play
 
