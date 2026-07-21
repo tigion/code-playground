@@ -1,4 +1,4 @@
-# Safe
+# Number
 
 A simple game in Python. The goal is to guess a number.
 
