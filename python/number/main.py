@@ -3,11 +3,22 @@ import sys
 from random import randint
 
 
+def read_guess():
+    """
+    Reads and returns a valid integer guess from the user.
+    """
+
+    while True:
+        try:
+            guess = int(input("Your guess: "))
+            return guess
+        except ValueError:
+            print("Invalid input!")
+
+
 def main():
     """
     The entry point of the program.
-
-    It contains the main loop for the functionality.
     """
 
     min_number = 1  # The minimum number.
@@ -21,28 +32,21 @@ def main():
 
     # The main loop.
     while True:
+        # Reads the guess from the user.
+        guess = read_guess()
+
         # Increases the number of attempts.
         attempts += 1
 
-        # Asks for the input and checks if it is a valid number.
-        try:
-            guess = int(input("Your guess: "))
-        except ValueError:
-            print("Invalid input!")
-            continue
-
-        # Checks if the guess is correct, to low or to high.
-        if guess == secret_number:
-            # The guess is correct.
+        # Checks if the guess is to low, to high or correct.
+        if guess < secret_number:
+            print("Too low!")
+        elif guess > secret_number:
+            print("Too high!")
+        else:
             print(f"\nYou win, the number was {secret_number}!")
             print(f"You had {attempts} attempts.")
             break
-        elif guess < secret_number:
-            # The guess is too low.
-            print("Too low!")
-        elif guess > secret_number:
-            # The guess is too high.
-            print("Too high!")
 
     return 0
 
