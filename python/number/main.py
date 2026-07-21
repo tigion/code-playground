@@ -1,4 +1,4 @@
-# Imports from standard modules.
+# Import from standard modules.
 import sys
 from random import randint
 
@@ -25,20 +25,20 @@ def main():
     max_number = 100  # The maximum number.
     attempts = 0  # The number of attempts.
 
-    # Generates a random number between the minimum and maximum.
+    # Generate a random number between the minimum and maximum.
     secret_number = randint(min_number, max_number)
 
     print(f"Guess my number between {min_number} and {max_number}!\n")
 
     # The main loop.
     while True:
-        # Reads the guess from the user.
+        # Read the guess from the user.
         guess = read_guess()
 
-        # Increases the number of attempts.
+        # Increase the number of attempts.
         attempts += 1
 
-        # Checks if the guess is to low, to high or correct.
+        # Check if the guess is to low, to high or correct.
         if guess < secret_number:
             print("Too low!")
         elif guess > secret_number:
