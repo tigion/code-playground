@@ -12,3 +12,6 @@ a.out
 
 # Python
 __pycache__/
+
+# Rust
+target/
