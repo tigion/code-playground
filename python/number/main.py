@@ -38,7 +38,7 @@ def main():
         # Increase the number of attempts.
         attempts += 1
 
-        # Check if the guess is to low, to high or correct.
+        # Check if the guess is too low, too high or correct.
         if guess < secret_number:
             print("Too low!")
         elif guess > secret_number:

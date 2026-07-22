@@ -49,7 +49,7 @@ int main(int argc, char *argv[]) {
     // Increase the number of attempts.
     attempts++;
 
-    // Check if the guess is to low, to high or correct.
+    // Check if the guess is too low, too high or correct.
     if (guess < secretNumber) {
       printf("Too low!\n");
     } else if (guess > secretNumber) {
