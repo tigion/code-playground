@@ -13,6 +13,10 @@ This is a collection of little code projects and tutorials.
 - [Number](./c/number/) - A simple game to guess a number.
 - [Safe](./c/safe/) - A simple game to guess a code.
 
+### 📙 [C++](./cpp/)
+
+- [Number](./cpp/number/) - A simple game to guess a number.
+
 ### 📙 [Java](./java/)
 
 - [Number](./java/number/) - A simple game to guess a number.

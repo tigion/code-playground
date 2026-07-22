@@ -2,7 +2,7 @@
 *~
 .DS_Store
 
-# C
+# C, C++
 a.out
 *.e
 *.o
