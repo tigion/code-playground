@@ -2,51 +2,52 @@
 
 # Checks if the given argument `$1` is an integer.
 # Returns the exit code `0` if it is, `1` otherwise.
-function is_integer() {
+is_integer() {
   [[ "$1" =~ ^[0-9]+$ ]]
 }
 
-# The minimum number.
-min_number=1
-# The maximum number.
-max_number=100
-# The number of attempts.
-attempts=0
+# Reads and returns a valid integer guess from the user.
+read_guess() {
+  local input
 
-# Generates a random number between the minimum and maximum.
+  while true; do
+    read -r -p "Your guess: " input
+    if is_integer "$input"; then
+      echo "$input"
+      return 0
+    fi
+    echo "Invalid input!" >&2
+  done
+}
+
+min_number=1   # The minimum number.
+max_number=100 # The maximum number.
+attempts=0     # The number of attempts.
+
+# Generate a random number between the minimum and maximum.
 secret_number=$((RANDOM % (max_number - min_number + 1) + min_number))
 
-# Prints the intro message.
-# echo "Guess my number between ${min_number} and ${max_number}!"
-# echo
-# echo -e "Guess my number between ${min_number} and ${max_number}!\n"
-printf "Guess my number between %d and %d!\n\n" "$min_number" "$max_number"
+echo "Guess my number between ${min_number} and ${max_number}!"
+echo
+# printf "Guess my number between %d and %d!\n\n" "$min_number" "$max_number"
 
 # The main loop.
 while true; do
-  # Increases the number of attempts by 1.
+  # Read the guess from the user.
+  guess=$(read_guess)
+
+  # Increase the number of attempts.
   attempts=$((attempts + 1))
 
-  # Asks for the input (without a line break).
-  read -r -p "Your guess: " guess
-
-  # Checks if the guess is a valid number, correct, to low or to high.
-  if ! is_integer "$guess"; then
-    # Is not an integer.
-    echo "Invalid input!"
-    continue
-  elif [[ $guess -eq $secret_number ]]; then
-    # The guess is correct.
+  # Check if the guess is too low, too high or correct.
+  if [[ $guess -lt $secret_number ]]; then
+    echo "Too low!"
+  elif [[ $guess -gt $secret_number ]]; then
+    echo "Too high!"
+  else
     echo
     echo "You win, the number was ${secret_number}!"
     echo "You had ${attempts} attempts."
-    # Exits the loop.
     break
-  elif [[ $guess -lt $secret_number ]]; then
-    # The guess is too low.
-    echo "Too low!"
-  elif [[ $guess -gt $secret_number ]]; then
-    # The guess is too high.
-    echo "Too high!"
   fi
 done
