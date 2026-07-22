@@ -1,38 +1,41 @@
+--- Reads and returns a valid integer guess from the user.
+---@return integer
+local function read_guess()
+  while true do
+    io.write('Your guess: ')
+    -- Converts the input to an integer (base 10).
+    local guess = tonumber(io.read(), 10)
+    if guess then return guess end
+    print('Invalid input!')
+  end
+end
+
 local min_number = 1 -- The minimum number.
 local max_number = 100 -- The maximum number.
 local attempts = 0 -- The number of attempts.
 
--- Generates a random number between the minimum and maximum.
+-- Generate a random number between the minimum and maximum.
 local secret_number = math.random(min_number, max_number)
 
--- Prints the intro message.
+-- Print the intro message.
 print('Guess my number between ' .. min_number .. ' and ' .. max_number .. '!\n')
 
 -- The main loop.
 while true do
-  -- Increases the number of attempts by 1.
+  -- Read the guess from the user.
+  local guess = read_guess()
+
+  -- Increase the number of attempts.
   attempts = attempts + 1
 
-  -- Asks for the input (without a line break).
-  io.write('Your guess: ')
-  -- Converts the input to an integer (base 10).
-  local guess = tonumber(io.read(), 10)
-
-  -- Checks if the guess is a valid number, correct, to low or to high.
-  if not guess then
-    -- Is not a valid number.
-    print('Invalid input!')
-  elseif guess == secret_number then
-    -- The guess is correct.
-    print('\nYou win, the number was ' .. secret_number .. '!')
-    print('You had ' .. attempts .. ' attempts.')
-    -- Exits the loop.
-    break
-  elseif guess < secret_number then
-    -- The guess is too low.
+  -- Check if the guess is too low, too high or correct.
+  if guess < secret_number then
     print('Too low!')
   elseif guess > secret_number then
-    -- The guess is too high.
     print('Too high!')
+  else
+    print('\nYou win, the number was ' .. secret_number .. '!')
+    print('You had ' .. attempts .. ' attempts.')
+    break
   end
 end
