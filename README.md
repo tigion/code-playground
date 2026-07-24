@@ -49,6 +49,10 @@ This is a collection of small, beginner-friendly coding projects and tutorials.
 
 - [Number](./swift/number/) - A simple game to guess a number.
 
+### 📙 [TypeScript](./typescript/)
+
+- [Number](./typescript/number/) - A simple game to guess a number.
+
 ### 📙 [Scratch](./scratch/)
 
 - [Catch Grades](./scratch/catch-grades/) (de) - A simple game with a
