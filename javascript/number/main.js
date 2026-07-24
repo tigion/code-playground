@@ -78,7 +78,7 @@ async function main() {
 // Start the game by calling the main function.
 // main()
 
-// With top-level error handling.
+// Start the game with top-level error handling.
 main().catch((error) => {
   console.error("\nUnexpected error:", error);
   process.exitCode = 1;
