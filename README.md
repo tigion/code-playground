@@ -17,6 +17,10 @@ This is a collection of little code projects and tutorials.
 
 - [Number](./cpp/number/) - A simple game to guess a number.
 
+### 📙 [Go](./go/)
+
+- [Number](./go/number/) - A simple game to guess a number.
+
 ### 📙 [Java](./java/)
 
 - [Number](./java/number/) - A simple game to guess a number.
