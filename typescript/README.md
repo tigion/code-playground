@@ -9,5 +9,4 @@ This is a collection of TypeScript projects.
 ## Links
 
 - [TypeScript](https://www.typescriptlang.org/)
-- [TSX](https://tsx.is/)
 - [Online TypeScript Compiler](https://www.tutorialspoint.com/compilers/online-typescript-compiler.htm)
