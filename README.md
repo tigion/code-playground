@@ -47,3 +47,7 @@ This is a collection of little code projects and tutorials.
   step-by-step tutorial.
 - [Space Bats](./scratch/space-bats/) - A simple game with a step-by-step
   tutorial.
+
+### 📙 [Zig](./zig/)
+
+- [Number](./zig/number/) - A simple game to guess a number.
