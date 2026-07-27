@@ -35,6 +35,10 @@ This is a collection of small, beginner-friendly coding projects and tutorials.
 - [Number](./lua/number/) - A simple game to guess a number.
 - [Safe](./lua/safe/) - A simple game to guess a code.
 
+### 📙 [PHP](./php/)
+
+- [Number](./php/number/) - A simple game to guess a number.
+
 ### 📙 [Python](./python/)
 
 - [Hangman](./python/hangman/) (wip) - A simple game to guess a word.
