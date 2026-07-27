@@ -17,6 +17,10 @@ This is a collection of small, beginner-friendly coding projects and tutorials.
 
 - [Number](./cpp/number/) - A simple game to guess a number.
 
+### 📙 [C#](./csharp/)
+
+- [Number](./csharp/number/) - A simple game to guess a number.
+
 ### 📙 [Go](./go/)
 
 - [Number](./go/number/) - A simple game to guess a number.
