@@ -41,6 +41,10 @@ This is a collection of small, beginner-friendly coding projects and tutorials.
 - [Number](./python/number/) - A simple game to guess a number.
 - [Safe](./python/safe/) - A simple game to guess a code.
 
+### 📙 [Ruby](./ruby/)
+
+- [Number](./ruby/number/) - A simple game to guess a number.
+
 ### 📙 [Rust](./rust/)
 
 - [Number](./rust/number/) - A simple game to guess a number.
