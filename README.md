@@ -56,6 +56,7 @@ This is a collection of small, beginner-friendly coding projects and tutorials.
 ### 📙 [Rust](./rust/)
 
 - [Number](./rust/number/) - A simple game to guess a number.
+- [Safe](./rust/safe/) - A simple game to guess a code.
 
 ### 📙 [Scratch](./scratch/)
 
