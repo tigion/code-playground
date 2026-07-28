@@ -1,5 +1,5 @@
 // Import required modules and traits.
-use rand::Rng;
+use rand::RngExt;
 use std::cmp::Ordering;
 use std::io::{self, Write};
 
@@ -32,7 +32,8 @@ fn main() {
     let mut attempts: u32 = 0; // The number of attempts.
 
     // Generates a random number between the minimum and maximum.
-    let secret_number = rand::rng().random_range(min_number..=max_number);
+    let mut rng = rand::rng();
+    let secret_number = rng.random_range(min_number..=max_number);
 
     println!("Guess my number between {min_number} and {max_number}!\n",);
 
