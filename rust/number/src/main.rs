@@ -3,8 +3,19 @@ use rand::RngExt;
 use std::cmp::Ordering;
 use std::io::{self, Write};
 
+/// The minimum number.
+const MIN_NUMBER: i32 = 1;
+
+/// The maximum number.
+const MAX_NUMBER: i32 = 100;
+
 /// Reads and returns a valid integer guess from the user.
-fn read_guess() -> i32 {
+///
+/// # Returns
+///
+/// * `Some(guess)` - The number entered by the user.
+/// * `None` - The input has ended (EOF, e.g. Ctrl+D).
+fn read_guess() -> Option<i32> {
     loop {
         let mut input = String::new();
 
@@ -13,39 +24,44 @@ fn read_guess() -> i32 {
         io::stdout().flush().expect("Failed to flush stdout");
 
         // Read a line of input from the user.
-        io::stdin()
+        let bytes_read = io::stdin()
             .read_line(&mut input)
             .expect("Failed to read input");
 
-        // Attempt to parse the input into an integer.
-        match input.trim().parse() {
-            Ok(number) => return number,
-            Err(_) => println!("Invalid input!"),
+        // If no bytes were read, it indicates EOF (Ctrl+D), so return None.
+        if bytes_read == 0 {
+            return None;
         }
+
+        // Attempt to parse the input into an integer.
+        if let Ok(number) = input.trim().parse::<i32>() {
+            return Some(number);
+        }
+
+        println!("Invalid input!");
     }
 }
 
 /// The entry point of the program.
+///
+/// It contains the main loop for the functionality.
 fn main() {
-    let min_number = 1; // The minimum number.
-    let max_number = 100; // The maximum number.
     let mut attempts: u32 = 0; // The number of attempts.
 
-    // Generates a random number between the minimum and maximum.
+    // Generate a random number between the minimum and maximum.
     let mut rng = rand::rng();
-    let secret_number = rng.random_range(min_number..=max_number);
+    let secret_number = rng.random_range(MIN_NUMBER..=MAX_NUMBER);
 
-    println!("Guess my number between {min_number} and {max_number}!\n",);
+    println!("Guess my number between {MIN_NUMBER} and {MAX_NUMBER}!\n");
 
     // The main loop.
-    loop {
-        // Reads the user's guess.
-        let guess = read_guess();
-
-        // Increases the number of attempts.
+    // It ends when the user guesses the correct number or
+    // when the input is None (EOF, e.g., Ctrl+D).
+    while let Some(guess) = read_guess() {
+        // Increase the number of attempts.
         attempts += 1;
 
-        // Checks if the guess is to low, to high or correct.
+        // Check if the guess is too low, too high or correct.
         match guess.cmp(&secret_number) {
             Ordering::Less => println!("Too low!"),
             Ordering::Greater => println!("Too high!"),
@@ -55,6 +71,9 @@ fn main() {
                 break;
             }
         }
+
+        // The following commented-out code is an alternative way to check
+        // the guess using if-else statements instead of pattern matching.
         // if guess < secret_number {
         //     println!("Too low!");
         // } else if guess > secret_number {
