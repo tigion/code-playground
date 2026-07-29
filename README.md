@@ -55,6 +55,7 @@ This is a collection of small, beginner-friendly coding projects and tutorials.
 
 ### 📙 [Rust](./rust/)
 
+- [ascii](./rust/ascii/) - Prints the ASCII table.
 - [Hangman](./rust/hangman/) - A simple game to guess a word.
 - [Number](./rust/number/) - A simple game to guess a number.
 - [Safe](./rust/safe/) - A simple game to guess a code.
