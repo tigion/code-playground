@@ -8,7 +8,7 @@ const COL_COUNT: usize = 4;
 /// The number of ASCII codes to show in the table.
 const CODE_COUNT: usize = (ASCII_LAST - ASCII_FIRST) as usize + 1;
 
-/// The number of rows needed to fit all codes into COL_COUNT columns.
+/// The number of rows needed to fit all codes into the columns.
 const ROW_COUNT: usize = CODE_COUNT.div_ceil(COL_COUNT);
 
 /// Returns a printable character for the given ASCII code.
