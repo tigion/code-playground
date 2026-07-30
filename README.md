@@ -10,6 +10,7 @@ This is a collection of small, beginner-friendly coding projects and tutorials.
 
 ### 📙 [C](./c/)
 
+- [ascii](./c/ascii/) - Prints the ASCII code table.
 - [Number](./c/number/) - A simple game to guess a number.
 - [Safe](./c/safe/) - A simple game to guess a code.
 
