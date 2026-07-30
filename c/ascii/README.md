@@ -1,6 +1,6 @@
 # ascii
 
-A simple program that prints the ASCII table written in C.
+A simple program that prints the ASCII code table written in C.
 
 ## How to build and run
 

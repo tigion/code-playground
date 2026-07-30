@@ -1,6 +1,6 @@
 # ascii
 
-A simple program that prints the ASCII table written in Rust.
+A simple program that prints the ASCII code table written in Rust.
 
 ## How to build and run
 
