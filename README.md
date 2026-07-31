@@ -42,6 +42,7 @@ project.
 ### 📗 [Lua](./lua/)
 
 - [ascii](./lua/ascii/) - Prints the ASCII code table.
+- [Hangman](./lua/hangman/) - A simple game to guess a word.
 - [Number](./lua/number/) - A simple game to guess a number.
 - [Safe](./lua/safe/) - A simple game to guess a code.
 
