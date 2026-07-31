@@ -142,8 +142,9 @@ local words = {
 
 --- Picks a random word from the word list.
 ---@return string? word A random word or `nil` if the list is empty.
+---@return string? err An error message if the list is empty.
 function WordList.random()
-  if #words == 0 then return nil end
+  if #words == 0 then return nil, 'The word list is empty!' end
 
   return words[math.random(#words)]
 end

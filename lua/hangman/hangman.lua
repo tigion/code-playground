@@ -66,7 +66,7 @@ Hangman.__index = Hangman
 ---@return Hangman? game The new Hangman instance or `nil` if the word is invalid.
 ---@return string? err Error message if creation failed.
 function Hangman:new(word)
-  if word == nil or word == '' then return nil, 'Word must not be empty.' end
+  if not word or word == '' then return nil, 'Word must not be empty.' end
 
   word = to_upper(word)
 
@@ -119,7 +119,7 @@ function Hangman:get_lives() return self._lives, MAX_LIVES end
 ---@return GuessResult result The result of the guess.
 function Hangman:guess(letter)
   local normalized_letter = normalize_letter(letter)
-  if normalized_letter == nil then return GuessResult.INVALID end
+  if not normalized_letter then return GuessResult.INVALID end
 
   -- A letter may only be used once, so a repeated guess is free.
   if self._used_letters[normalized_letter] then return GuessResult.DUPLICATE end

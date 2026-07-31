@@ -9,15 +9,16 @@ local WordList = require('wordlist')
 local Hangman = require('hangman')
 
 -- Pick a random word from the word list or exit if the list is empty.
-local word = WordList.random()
-if word == nil then
-  print('The word list is empty!')
+local word, err = WordList.random()
+if not word then
+  print('Failed to pick a random word: ' .. err)
   return
 end
 
 -- Initialize a new Hangman game.
-local game, err = Hangman:new(word)
-if game == nil then
+local game
+game, err = Hangman:new(word)
+if not game then
   print('Failed to initialize the game: ' .. err)
   return
 end
@@ -45,7 +46,7 @@ while true do
   -- Asks for a letter and ends the game when the input is over.
   io.write('Which letter is in the word? ')
   local input = io.read()
-  if input == nil then break end
+  if not input then break end
 
   -- React to the guess result and print the corresponding message.
   local result = game:guess(input)

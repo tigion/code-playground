@@ -1,6 +1,40 @@
 # Lua Notes
 
+<!--toc:start-->
+
+- [Best Practices](#best-practices)
+  - [`value == nil` vs. `not value`](#value-nil-vs-not-value)
+  - [Append to a table](#append-to-a-table)
+  - [Initialize the random number generator](#initialize-the-random-number-generator)
+  - [Name: `error`](#name-error)
+- [Compatibility](#compatibility)
+  - [`utf8`](#utf8)
+  - [LuaJIT](#luajit)
+
+<!--toc:end-->
+
 ## Best Practices
+
+### `value == nil` vs. `not value`
+
+Use `not value` when you want to check if a value is missing or false:
+
+```lua
+if not value then
+  -- value is nil or false
+end
+```
+
+Use `value == nil` when you specifically want to check for `nil` only:
+
+```lua
+if value == nil then
+  -- value is exactly nil
+end
+```
+
+In Lua, only `nil` and `false` are falsy. Use `not value` for general existence
+checks and `value == nil` when `false` is a valid value.
 
 ### Append to a table
 
